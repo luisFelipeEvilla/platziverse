@@ -1,0 +1,25 @@
+{
+  "name": "platziverse-db",
+  "version": "1.0.0",
+  "description": "A simple IoT platform - DB Module",
+  "main": "index.js",
+  "scripts": {
+    "lint": "standard --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luisFelipeEvilla/platziverse.git"
+  },
+  "keywords": [
+    "IoT"
+  ],
+  "author": "Luis Felipe Evilla <https://github.com/luisFelipeEvilla>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/luisFelipeEvilla/platziverse/issues"
+  },
+  "homepage": "https://github.com/luisFelipeEvilla/platziverse#readme",
+  "devDependencies": {
+    "standard": "^12.0.1"
+  }
+}
