@@ -1,5 +1,7 @@
 'use strict'
 
+const chalk = require('chalk')
+
 function extend (obj, values) {
   const clone = Object.assign({}, obj)
   return Object.assign(clone, values)
@@ -20,7 +22,14 @@ function sortBy (property) {
   }
 }
 
+function handleFatalError (err) {
+  console.error(`${chalk.red('[Fatal error]')} ${err.message}`)
+  console.error(err.stack)
+  process.exit(1)
+}
+
 module.exports = {
   extend,
-  sortBy
+  sortBy,
+  handleFatalError
 }
