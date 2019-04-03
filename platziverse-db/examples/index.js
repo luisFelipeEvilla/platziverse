@@ -1,7 +1,7 @@
 'use strict'
 
 const db = require('../')
-const { handleFatalError } = require('../utils')
+const { handleFatalError } = require('../../platziverse-utils')
 const debug = require('debug')('platziverse:example')
 const chalk = require('chalk')
 

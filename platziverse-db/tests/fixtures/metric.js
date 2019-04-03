@@ -1,6 +1,6 @@
 'use strict'
 
-const { extend, sortBy } = require('../../utils')
+const { extend, sortBy } = require('../../../platziverse-utils')
 const agentFixtures = require('../fixtures/agent')
 
 const metric = {
