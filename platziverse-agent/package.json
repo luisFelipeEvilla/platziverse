@@ -4,7 +4,7 @@
   "description": "A Simple IoT Platform - Agent",
   "main": "index.js",
   "scripts": {
-    "lint": "standar -- --fix"
+    "lint": "standard -- --fix"
   },
   "repository": {
     "type": "git",
