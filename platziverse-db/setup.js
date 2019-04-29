@@ -1,12 +1,12 @@
 'use strict'
 
-require('dotenv').config()
-const db = require('./')
+const { config, handleFatalError } = require('../platziverse-utils')
 const debug = require('debug')('platziverse:db:setup')
+const conf = config({logging: debug})
+const db = require('./')
 const inquirer = require('inquirer')
-const { handleFatalError } = require('./utils')
 
-async function setup () {
+async function setup() {
   const byPass = process.argv.indexOf('yes') !== -1 || process.argv.indexOf('y') !== -1
 
   if (!byPass) {
@@ -33,7 +33,10 @@ async function setup () {
     logging: s => debug(s),
     setup: true
   }
-  await db(config).catch(handleFatalError)
+
+  conf.setup = true
+
+  await db(conf).catch(handleFatalError)
 
   console.log('Sucess')
   process.exit(0)

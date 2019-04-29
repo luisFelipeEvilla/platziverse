@@ -1,11 +1,12 @@
 {
-  "name": "platziverse-db",
+  "name": "platziverse-mqtt",
   "version": "1.0.0",
-  "description": "A simple IoT platform - DB Module",
-  "main": "index.js",
+  "description": "a simple IoT Platform - MQTT Server",
+  "main": "server.js",
   "scripts": {
-    "test": "set DEBUG=platziverse:* && nyc --reporter=lcov ava tests/ --verbose",
-    "setup": "DEBUG=platziverse:* node setup.js",
+    "start": "set NODE_ENV=production node server.js",
+    "start:dev": "DEBUG=platziverse:* nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "standard --fix"
   },
   "repository": {
@@ -13,7 +14,8 @@
     "url": "git+https://github.com/luisFelipeEvilla/platziverse.git"
   },
   "keywords": [
-    "IoT"
+    "IoT",
+    "MQTT"
   ],
   "author": "Luis Felipe Evilla <https://github.com/luisFelipeEvilla>",
   "license": "MIT",
@@ -22,21 +24,15 @@
   },
   "homepage": "https://github.com/luisFelipeEvilla/platziverse#readme",
   "devDependencies": {
-    "ava": "^1.4.1",
-    "nyc": "^14.1.0",
-    "proxyquire": "^2.1.0",
-    "sinon": "^7.3.1",
-    "sqlite3": "^4.0.6",
+    "nodemon": "^1.18.11",
     "standard": "^12.0.1"
   },
   "dependencies": {
     "chalk": "^2.4.2",
     "debug": "^4.1.1",
-    "defaults": "^1.0.3",
-    "dotenv": "^7.0.0",
-    "inquirer": "^6.2.2",
-    "pg": "^7.9.0",
-    "pg-hstore": "^2.3.2",
-    "sequelize": "^5.7.6"
+    "mosca": "^2.8.3",
+    "mqtt": "^2.18.8",
+    "platziverse-db": "file:../platziverse-db",
+    "redis": "^2.8.0"
   }
 }
