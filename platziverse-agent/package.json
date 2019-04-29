@@ -1,0 +1,29 @@
+{
+  "name": "platziverse-agent",
+  "version": "1.0.0",
+  "description": "A Simple IoT Platform - Agent",
+  "main": "index.js",
+  "scripts": {
+    "lint": "standar -- --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luisFelipeEvilla/platziverse.git"
+  },
+  "keywords": [
+    "IoT"
+  ],
+  "author": "Luis Felipe Evilla <https://github.com/luisFelipeEvilla>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/luisFelipeEvilla/platziverse/issues"
+  },
+  "homepage": "https://github.com/luisFelipeEvilla/platziverse#readme",
+  "dependencies": {
+    "debug": "^4.1.1",
+    "defaults": "^1.0.3",
+    "mqtt": "^2.18.8",
+    "standard": "^12.0.1",
+    "uuid": "^3.3.2"
+  }
+}
