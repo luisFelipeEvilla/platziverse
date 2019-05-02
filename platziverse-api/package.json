@@ -1,0 +1,33 @@
+{
+  "name": "platziverse-api",
+  "version": "1.0.0",
+  "description": "A simple IoT Platform - API",
+  "main": "server.js",
+  "scripts": {
+    "startd": "NODE_ENV=production node server.js",
+    "start:dev": "DEBUG=platziverse:* nodemon server.js",
+    "lint": "standard -- -fix",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "<https://github.com/luisFelipeEvilla/platziverse>"
+  },
+  "keywords": [
+    "IOT",
+    "API",
+    "express",
+    "node"
+  ],
+  "author": "Luis Felipe Evilla Rodríguez <https://github.com/luisFelipeEvilla>",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "debug": "^4.1.1",
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.11",
+    "standard": "^12.0.1"
+  }
+}
