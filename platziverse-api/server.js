@@ -11,6 +11,7 @@ const { handleFatalError } = require('../platziverse-utils')
 const PORT = process.env.PORT || 3000
 
 const app = express()
+const server = http.createServer(app)
 
 app.use('/api', api)
 
@@ -19,22 +20,23 @@ app.use((err, req, res, next) => {
 
     if (err.message.match(/not found/)) {
         return res.status(404).send(
-            { 
-            error: err.name, 
-            message: err.message
+            {
+                error: err.name,
+                message: err.message
             }
         )
     }
 
-    res.status(500).send({ error: err.message })  
+    res.status(500).send({ error: err.message })
 })
 
-app.on('uncaughtException', handleFatalError)
-app.on('unhandledRejection', handleFatalError)
+if (!module.parent) {
+    app.on('uncaughtException', handleFatalError)
+    app.on('unhandledRejection', handleFatalError)
 
-const server = http.createServer(app)
+    server.listen(PORT, () => {
+        console.log(`${chalk.green('[platziverse-api]')} server listening on port ${PORT}`)
+    })
+}
 
-server.listen(PORT, () => {
-    console.log(`${chalk.green('[platziverse-api]')} server listening on port ${PORT}`)
-})
-
+module.exports = server
