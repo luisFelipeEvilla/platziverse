@@ -2,6 +2,7 @@
 
 const debug = require('debug')('platziverse:api')
 const express = require('express')
+const err = require('./errors');
 
 const api = express.Router()
 
@@ -9,8 +10,13 @@ api.get('/agents', (req, res) => {
     res.send({})
 })
 
-api.get('/agents/:uuid', (req, res) => {
+api.get('/agents/:uuid', (req, res, next) => {
     const { uuid } = req.params
+
+    if (uuid === 'yyy') {
+        return next(new err.MetricsNotFounds('yyy', 'memory'))    
+    }
+
     res.send({ uuid })
 })
 
